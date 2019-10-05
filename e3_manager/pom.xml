@@ -15,7 +15,6 @@
         <module>e3_dao</module>
         <module>e3_service</module>
         <module>e3_interface</module>
-        <module>e3_web</module>
     </modules>
 
     <dependencies>
