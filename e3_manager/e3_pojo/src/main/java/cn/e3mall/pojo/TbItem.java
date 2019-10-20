@@ -3,7 +3,11 @@ package cn.e3mall.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author 10642
+ */
 public class TbItem  implements Serializable {
+    private static final long serialVersionUID = -2585253450686922981L;
     private Long id;
 
     private String title;
@@ -20,6 +24,10 @@ public class TbItem  implements Serializable {
 
     private Long cid;
 
+
+    /**
+     *  正常1，下架2，删除3
+     */
     private Byte status;
 
     private Date created;

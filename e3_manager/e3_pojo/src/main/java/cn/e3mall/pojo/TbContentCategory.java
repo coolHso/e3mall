@@ -10,6 +10,9 @@ public class TbContentCategory  implements Serializable {
 
     private String name;
 
+    /**
+     *  1、正常，2、删除
+     */
     private Integer status;
 
     private Integer sortOrder;

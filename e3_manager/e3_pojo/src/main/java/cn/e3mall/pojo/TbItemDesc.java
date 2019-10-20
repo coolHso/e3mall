@@ -24,6 +24,17 @@ public class TbItemDesc  implements Serializable {
         return created;
     }
 
+    public TbItemDesc() {
+    }
+
+    public TbItemDesc(Long itemId, Date created, Date updated, String itemDesc) {
+        this.itemId = itemId;
+        this.created = created;
+        this.updated = updated;
+        this.itemDesc = itemDesc;
+
+    }
+
     public void setCreated(Date created) {
         this.created = created;
     }

@@ -10,6 +10,10 @@
         <module>e3_common</module>
         <module>e3_manager</module>
         <module>e3_web</module>
+        <module>e3_content</module>
+        <module>e3_portal_web</module>
+        <module>e3_search</module>
+        <module>e3_search_web</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
@@ -31,7 +35,7 @@
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
-        <pagehelper.version>5.1.2</pagehelper.version>
+        <pagehelper.version>3.4.2-fix</pagehelper.version>
         <jsqlparser.version>0.9.1</jsqlparser.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <jedis.version>2.7.2</jedis.version>
