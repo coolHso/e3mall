@@ -5,12 +5,9 @@ import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.search.mapper.ItemMapper;
 import cn.e3mall.search.service.ItemSearchService;
 import org.apache.solr.client.solrj.SolrServer;
-import org.apache.solr.client.solrj.impl.HttpSolrServer;
-import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 @Service
 public class ItemSearchServiceImpl implements ItemSearchService {
@@ -43,4 +40,29 @@ public class ItemSearchServiceImpl implements ItemSearchService {
             return E3Result.build(500,"商品导入失败");
         }
     }
+
+    @Override
+    public E3Result addDocument(Long itemId) {
+        ItemSearch item = itemMapper.getItemById(itemId);
+        if(item != null){
+            SolrInputDocument document = new SolrInputDocument();
+            document.addField("id",item.getId());
+            document.addField("item_title",item.getTitle());
+            document.addField("item_sell_point",item.getSell_point());
+            document.addField("item_image",item.getImage());
+            document.addField("item_category_name",item.getCategory_name());
+            document.addField("item_price",item.getPrice());
+            document.addField("item_desc",item.getDesc());
+            try {
+                solrServer.add(document);
+                solrServer.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return E3Result.ok(item);
+        }
+        return null;
+    }
+
+
 }

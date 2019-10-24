@@ -12,4 +12,10 @@ public interface ItemMapper {
      * @return 查询结果列表
      */
     List<ItemSearch> getItemList();
+
+    /**
+     * @param id 商品id
+     * @return 商品
+     */
+    ItemSearch getItemById(Long id);
 }

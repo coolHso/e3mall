@@ -14,6 +14,9 @@
         <module>e3_portal_web</module>
         <module>e3_search</module>
         <module>e3_search_web</module>
+        <module>e3_item_web</module>
+        <module>e3_sso</module>
+        <module>e3_sso_web</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
@@ -233,7 +236,6 @@
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

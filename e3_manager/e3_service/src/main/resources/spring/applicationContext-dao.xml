@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 
-    <context:property-placeholder location="classpath:conf/db.properties" />
+    <context:property-placeholder location="classpath:conf/*.properties" />
 
     <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="${jdbc.driver}" />

@@ -16,6 +16,7 @@ public class ItemSearch implements Serializable{
     private long price;
     private String image;
     private String category_name;
+    private String desc;
 
     public String getId() {
         return id;
@@ -70,5 +71,13 @@ public class ItemSearch implements Serializable{
             return getImage().split(",");
         }
         return null;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 }

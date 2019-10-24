@@ -40,8 +40,8 @@ public class ItemController {
 
     @RequestMapping("/item/query")
     @ResponseBody
-    public E3Result queryItemById(long id){
-        return itemService.queryItemDescById(id);
+    public E3Result getItemById(long id){
+        return itemService.getItemById(id);
     }
 
 
