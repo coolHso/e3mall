@@ -109,7 +109,7 @@
                         <div class="pBtn" id="cart-add-btn-sf"><a onclick="cartAdd(${item.id}, 0, 1, 0, 1, this);"><b></b>加入购物车</a></div>
                         <div class="pBtn quickBuy" style="display: none;" id="quickBuy" title="快速下单，直达填写订单页面"><a onclick="oneKeyBuy(${item.id}, 0, 1, 0, 1, this);">一键购买</a></div>
 						<div class="yj_time" id="sendTime">预计发货时间：<br>2014-02-28 08:59</div>
-						<div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
+						<div class="phone_client phone_border"><div id="phone_time5">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							<!--手机二维码显示层-->0
 							<div class="phone_clientCode" style="display:none;">
 								<a href="javascript:void(0)" class="ac_phoneClose" title="关闭"></a>
@@ -123,7 +123,7 @@
                         <div class="pBtn"><span class="noShip">已售完</span></div>
                         <div class="pBtn preBtn" id="arrival_notice"><a href="javascript:void(0);" onclick="Goods.arrivalNotice(this);">到货通知</a></div>
                         <div class="pBtn quickBuy disable"><a href="javascript:void(0);">一键购买</a></div>
-						<div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
+						<div class="phone_client phone_border"><div id="phone_time3">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							<!--手机二维码显示层-->
 							<div class="phone_clientCode" style="display:none;">
 								<a href="javascript:void(0)" class="ac_phoneClose" title="关闭"></a>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="chooseBtns" id="buy-canntsend-sf" style="display:none">
                          <div class="pBtn"><span class="noShip">无法送达</span></div>
-						 <div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
+						 <div class="phone_client phone_border"><div id="phone_time2">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							
 						</div>
                         <span class="clear"></span>
@@ -223,7 +223,7 @@
                     <dl class="prate">
                         <dt>好评度：</dt>
                         <dd>
-                            <div class="dd"><span id="positive-sf" style="100%"></span></div>
+                            <div class="dd"><span id="positive-sf" style=""></span></div>
                             <strong><span id="positive-num-sf">100</span><span>%</span></strong>
                             <div style="display:none" id="score"></div>
                         </dd>

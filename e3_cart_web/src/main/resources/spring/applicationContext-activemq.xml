@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+    <!--真正可以产生connection的factory，由各厂商的JMS提供-->
+    <bean class="org.apache.activemq.ActiveMQConnectionFactory" id="targetActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://192.168.1.131:61616" />
+    </bean>
+    <!--spring用于管理真正factory的factory-->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="targetActiveMQConnectionFactory" />
+    </bean>
+    <!--这个是主题目的地，一对多的 -->
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="topic-item-add" />
+    </bean>
+
+    <!-- 接收消息 -->
+    <!-- 配置监听器 -->
+    <!--<bean id="genItemHtmlListener" class="cn.e3mall.item.listener.GenItemHtmlListener" />-->
+    <bean class="org.springframework.util.backoff.FixedBackOff" id="backOff" >
+        <property name="maxAttempts" value="3" />
+    </bean>
+    <!-- 消息监听容器 -->
+    <!--<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicDestination" />
+        &lt;!&ndash;<property name="messageListener" ref="genItemHtmlListener" />&ndash;&gt;
+        <property name="backOff" ref="backOff" />
+    </bean>-->
+
+
+
+
+
+</beans>
